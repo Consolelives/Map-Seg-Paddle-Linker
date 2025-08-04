@@ -1,6 +1,6 @@
-# HM_Land Instance Segmentation using SAM Models
+# Map-Seg-Paddle-Linker
 
-This project was developed for the **HM Land Registry Data Science Challenge**. It performs high-resolution instance segmentation and reference detection from scanned land registry maps using:
+This project performs high-resolution instance segmentation and reference detection from scanned maps using:
 
 - **Segment Anything Models (SAM)** from Meta AI  
 - **PaddleOCR**  
