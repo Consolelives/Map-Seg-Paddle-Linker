@@ -1,39 +1,58 @@
 # Map-Seg-Paddle-Linker
 
-Automatic Extraction of Red Boundaries & Reference Numbers from Scanned Maps
-This project uses advanced computer vision and OCR to detect red plot boundaries and read red reference numbers from scanned maps, then exports the results as fully usable geospatial data.
+![Python](https://img.shields.io/badge/python-3.10-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+From Map Image to GIS Data in Minutes — AI-Powered Boundary & Label Extraction  
+Automatically detect red plot boundaries and reference numbers from scanned maps, ready for GIS.
 
 Ideal for:
 
-  - Land registry digitization
-  - Urban planning and cadastral mapping
-  - Historical map preservation and analysis
+- Land registry digitization  
+- Urban planning and cadastral mapping  
+- Historical map preservation and analysis  
 
-#  Key Features
-Red Line Segmentation – Detect and extract precise plot boundaries.
+---
 
-Red Number Recognition – Automatically read reference numbers using OCR.
+## Table of Contents
 
-Boundary-to-Reference Linking – Match each polygon to its corresponding label.
+- [Key Features](#key-features)  
+- [How It Works](#how-it-works)  
+- [Visual Overview](#visual-overview)  
+- [Requirements](#-requirements)  
+- [Setup & Installation](#-setup--installation)  
+- [Usage](#usage)  
+- [Why This Matters](#why-this-matters)  
+- [Contact](#contact)  
+- [Acknowledgements](#acknowledgements)  
 
-GIS-Compatible Output – Export as .gpkg or shapefile for QGIS/ArcGIS.
+---
 
-Modular Jupyter notebooks & scripts for full or step-by-step execution.
+## Key Features
 
-#  How It Works
+- **Red Line Segmentation** – Detect and extract precise plot boundaries.  
+- **Red Number Recognition** – Automatically read reference numbers using OCR.  
+- **Boundary-to-Reference Linking** – Match each polygon to its corresponding label.  
+- **GIS-Compatible Output** – Export as `.gpkg` or shapefile for QGIS/ArcGIS.  
+- **Modular Notebooks & Scripts** – Run step-by-step or execute full pipeline.  
 
-Example Workflow:
-1. Input – A scanned or photographed map with red plot boundaries and red reference numbers.
-2. Preprocessing –
+---
 
-    - Convert to HSV color space
-    - Isolate red pixels (lines & text)
-    - Remove noise and skeletonize lines
+## How It Works
 
-3. Segmentation – Use Segment Anything Model (SAM) to detect plot polygons.
-4. OCR Detection – Use PaddleOCR to read red reference numbers from the image.
-5. Data Linking – Match each detected polygon to its corresponding reference number.
-6. Export – Save as GeoPackage (.gpkg) or shapefile for GIS systems
+📄 **Scanned Map** → 🎨 **Red Pixel Isolation** → 🖼️ **SAM Segmentation** → 🔢 **PaddleOCR** → 🔗 **Linking** → 🌍 **GIS Export**
+
+1. **Input:** A scanned or photographed map with red plot boundaries and reference numbers.  
+2. **Preprocessing:**  
+    - Convert image to HSV color space  
+    - Isolate red pixels (lines & text)  
+    - Remove noise and skeletonize lines  
+3. **Segmentation:** Use Segment Anything Model (SAM) to detect plot polygons.  
+4. **OCR Detection:** Use PaddleOCR to read red reference numbers from the image.  
+5. **Data Linking:** Match each detected polygon to its corresponding reference number.  
+6. **Export:** Save as GeoPackage (`.gpkg`) or shapefile for GIS systems.  
+
+---
 
 ## Visual Overview
 
@@ -45,40 +64,23 @@ Example Workflow:
 | Example OCR Output | <img src="https://github.com/user-attachments/assets/3165a478-2940-4e40-8716-1b341b58e060" width="100"/> | Single extracted reference number for demonstration |
 | Final GIS Output | <img src="https://github.com/user-attachments/assets/d50020a3-431d-419f-8ce6-4424f78728b7" width="300"/> | Exported geospatial map with linked boundaries and reference numbers |
 
-
-
-# Visual Overview
-
-Input Map	   
-<img width="2990" height="2770" alt="trim_class" src="https://github.com/user-attachments/assets/a7abbace-4d08-41d6-8cbe-039e0e8624b0" />
-
-# Skeletonized Image
-
-<img width="2990" height="2770" alt="output_image_4" src="https://github.com/user-attachments/assets/4485a03c-c2ad-4393-bef0-8c5b81e34b40" />
-
-<img width="2990" height="2770" alt="skeleton_image" src="https://github.com/user-attachments/assets/336357be-0039-4163-806d-84268278eb28" />
-
-## Extracted Red Lines & Numbers	
-<img width="953" height="827" alt="segment_1" src="https://github.com/user-attachments/assets/202381e5-a161-4fc5-940d-ad658f49da4a" />
-
-<img width="5980" height="2770" alt="trimmed_ocr_res_img" src="https://github.com/user-attachments/assets/970ea435-272c-4207-b53c-6e709c8c9f6b" />
-
-<img width="136" height="89" alt="97_0554" src="https://github.com/user-attachments/assets/3165a478-2940-4e40-8716-1b341b58e060" />
-
-# Final GIS Output
-
-
-<img width="2131" height="1979" alt="Geopandas_map" src="https://github.com/user-attachments/assets/d50020a3-431d-419f-8ce6-4424f78728b7" />
-
 ---
 
-# 🔧 Requirements
+## 🔧 Requirements
 
 - Python 3.10  
 - Anaconda (recommended for environment management)  
-- NVIDIA GPU with CUDA 11.8 support (required for GPU acceleration with PyTorch and PaddlePaddle)
+- NVIDIA GPU with CUDA 11.8 support (required for GPU acceleration with PyTorch and PaddlePaddle)  
 
 ---
+
+## ⚙️ Setup & Installation
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Consolelives/Map-Seg-Paddle-Linker.git
+cd Map-Seg-Paddle-Linker
+
 
 ## ⚙️ Setup & Installation
 
@@ -116,6 +118,8 @@ Manual digitization of maps is time-consuming and error-prone. This project auto
 Faster (minutes instead of hours)
 More accurate (OCR + AI segmentation)
 GIS-ready from the start
+
+Keywords: Computer Vision, OCR, PaddleOCR, SAM, GIS Automation, Map Segmentation, Boundary Detection, Land Registry, Geospatial AI
 
 📬 Contact
 I can adapt this pipeline to your specific maps, formats, and accuracy requirements.
