@@ -109,6 +109,7 @@ jupyter notebook Run_all_Process.ipynb
 5. GEOPANDAS.ipynb – Export results as GIS-ready data
 
 🌍 Why This Matters
+
 Manual digitization of maps is time-consuming and error-prone. This project automates the process with AI, making it:
 Faster (minutes instead of hours)
 More accurate (OCR + AI segmentation)
@@ -117,11 +118,14 @@ GIS-ready from the start
 Keywords: Computer Vision, OCR, PaddleOCR, SAM, GIS Automation, Map Segmentation, Boundary Detection, Land Registry, Geospatial AI
 
 📬 Contact
+
 I can adapt this pipeline to your specific maps, formats, and accuracy requirements.
+
 📧 Email: olalekanoyeleye@yahoo.com
 🔗 LinkedIn: https://www.linkedin.com/in/olalekanoyeleye/
 
 🙌 Acknowledgements
+
 Ultralytics
 Meta AI – Segment Anything
 PaddleOCR
