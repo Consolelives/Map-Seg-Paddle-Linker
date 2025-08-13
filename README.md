@@ -81,31 +81,26 @@ Ideal for:
 git clone https://github.com/Consolelives/Map-Seg-Paddle-Linker.git
 cd Map-Seg-Paddle-Linker
 
-
-## ⚙️ Setup & Installation
-
-### i. Clone the Repository
-
-```bash
-# Clone repository
-git clone https://github.com/Consolelives/Map-Seg-Paddle-Linker.git
-cd Map-Seg-Paddle-Linker
-
-### Create environment
+```
+### 2. Create environment
+```
 conda create -n map_seg python=3.10 -y
 conda activate map_seg
+```
+### 3. Install Dependencies
+```
+pip install -r requirements.txt
 ```
 
 🚀 Usage
 You can run each step individually via notebooks, or execute the full pipeline at once.
-
 
 Full pipeline:
 ```
 jupyter notebook Run_all_Process.ipynb
 ```
 
-## Step-by-step notebooks:
+### Step-by-step notebooks:
 
 1. IMAGE_PROCESSING.ipynb – Isolate red boundaries & numbers
 2. PADDLE_OCR.ipynb – Detect and read reference numbers
