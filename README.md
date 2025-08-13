@@ -25,24 +25,19 @@ GIS-Compatible Output – Export as .gpkg or shapefile for QGIS/ArcGIS.
 Modular Jupyter notebooks & scripts for full or step-by-step execution.
 
 #  How It Works
+
 Example Workflow:
-Input – A scanned or photographed map with red plot boundaries and red reference numbers.
+1. Input – A scanned or photographed map with red plot boundaries and red reference numbers.
+2. Preprocessing –
 
-Preprocessing –
+    - Convert to HSV color space
+    - Isolate red pixels (lines & text)
+    - Remove noise and skeletonize lines
 
-Convert to HSV color space
-
-Isolate red pixels (lines & text)
-
-Remove noise and skeletonize lines
-
-Segmentation – Use Segment Anything Model (SAM) to detect plot polygons.
-
-OCR Detection – Use PaddleOCR to read red reference numbers from the image.
-
-Data Linking – Match each detected polygon to its corresponding reference number.
-
-Export – Save as GeoPackage (.gpkg) or shapefile for GIS systems.
+3. Segmentation – Use Segment Anything Model (SAM) to detect plot polygons.
+4. OCR Detection – Use PaddleOCR to read red reference numbers from the image.
+5. Data Linking – Match each detected polygon to its corresponding reference number.
+6. Export – Save as GeoPackage (.gpkg) or shapefile for GIS systems
 
 
 
@@ -103,95 +98,24 @@ pip install -r requirements.txt
 
 ```
 
-📘 Notebooks Overview
-This repository contains multiple Jupyter notebooks that walk through each step of the pipeline. Please open and run them in the order below for clarity:
+🚀 Usage
+You can run each step individually via notebooks, or execute the full pipeline at once.
 
-```
-1. IMAGE PROCESSING -CV2-SUBMITTED.ipynb
-Purpose:
-Image preprocessing for detection and segmentation.
-
-Trimmed original images
-
-Extracted red lines in HSV space
-
-Applied skeletonization
-
-Saved cleaned data to CSV
-```
-
-```
-2. PADDLE OCR - SUBMITTED.ipynb
-Purpose:
-Text detection using PaddleOCR.
-
-Detected reference text with confidence scores above 82%
-
-Data cleaning performed for accuracy
-
-Note: To install PaddleOCR, uncomment and run the relevant markdown cell in the notebook
-
-Reference confidence scores shown in Cell 14
-```
+Full pipeline:
 
 
-```
-3. SAM MODELS - SUBMITTED2.ipynb
-Purpose:
-Instance segmentation using SAM variants.
+jupyter notebook Run_all_Process.ipynb
 
-Used SAM-B, SAM-L, and MobileSAM from Ultralytics
+Step-by-step notebooks:
 
-Detected shapes from skeletonized image
+IMAGE_PROCESSING.ipynb – Isolate red boundaries & numbers
 
-Achieved 87%+ confidence on most instances
+PADDLE_OCR.ipynb – Detect and read reference numbers
 
-Confidence scores are displayed in Cell 28 or under the markdown:
+SAM_MODELS.ipynb – Segment plots into polygons
 
-Using the Confidence Column, get the rows with the highest confidence
+COMBINE_DATA.ipynb – Link polygons with reference numbers
 
-```
+GEOPANDAS.ipynb – Export results as GIS-ready data
 
-```
-4. COMBINE THE IMAGE AND REFERENCE DATAFRAMES - Submitted.ipynb
-Purpose:
-Match detected shapes and reference text.
 
-Combined results from PaddleOCR and SAM segmentation
-
-Mapped text to shapes
-
-Exported the final metadata into a .pkl file for use in GeoPandas
-
-```
-
-```
-5. GEOPANDAS - SUBMITTED.ipynb
-Purpose:
-Visualize and export the spatial data.
-
-Saved results as a GeoPackage (.gpkg)
-
-Plotted segmented instances with overlaid references
-```
-
-```
-✅ OR... Just run everything at once
-Use Run all Process.ipynb to execute the full pipeline in one go.
-
-No need to modify other notebooks — all logic is modularized and also available in standalone Python scripts.
-
-```
-
-```
-🙌 Acknowledgements
-Meta AI – Segment Anything
-
-Ultralytics YOLOv8
-
-PaddleOCR
-
-PyTorch
-
-GeoPandas
-```
