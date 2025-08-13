@@ -1,17 +1,13 @@
 # Map-Seg-Paddle-Linker
 
 Automatic Extraction of Red Boundaries & Reference Numbers from Scanned Maps
-
 This project uses advanced computer vision and OCR to detect red plot boundaries and read red reference numbers from scanned maps, then exports the results as fully usable geospatial data.
 
 Ideal for:
 
   - Land registry digitization
-
   - Urban planning and cadastral mapping
-
   - Historical map preservation and analysis
-
 
 #  Key Features
 Red Line Segmentation – Detect and extract precise plot boundaries.
@@ -38,6 +34,16 @@ Example Workflow:
 4. OCR Detection – Use PaddleOCR to read red reference numbers from the image.
 5. Data Linking – Match each detected polygon to its corresponding reference number.
 6. Export – Save as GeoPackage (.gpkg) or shapefile for GIS systems
+
+## Visual Overview
+
+| Step | Image | Description |
+|------|-------|-------------|
+| Input Map | <img src="https://github.com/user-attachments/assets/a7abbace-4d08-41d6-8cbe-039e0e8624b0" width="300"/> | Original scanned map with red plot boundaries and reference numbers |
+| Skeletonized Image | <img src="https://github.com/user-attachments/assets/336357be-0039-4163-806d-84268278eb28" width="300"/> | Red lines thinned and cleaned for precise segmentation |
+| Extracted Red Lines & Numbers | <img src="https://github.com/user-attachments/assets/970ea435-272c-4207-b53c-6e709c8c9f6b" width="300"/> | Boundaries + OCR-detected reference numbers |
+| Example OCR Output | <img src="https://github.com/user-attachments/assets/3165a478-2940-4e40-8716-1b341b58e060" width="100"/> | Single extracted reference number for demonstration |
+| Final GIS Output | <img src="https://github.com/user-attachments/assets/d50020a3-431d-419f-8ce6-4424f78728b7" width="300"/> | Exported geospatial map with linked boundaries and reference numbers |
 
 
 
@@ -83,39 +89,42 @@ Input Map
 git clone https://github.com/Consolelives/Map-Seg-Paddle-Linker.git
 cd Map-Seg-Paddle-Linker
 
-
-
-```
 ### Create environment
 conda create -n map_seg python=3.10 -y
 conda activate map_seg
-
-```
-
-```
-### iii. Install all Depedencies(with CUDA 11.8)
-pip install -r requirements.txt
-
 ```
 
 🚀 Usage
 You can run each step individually via notebooks, or execute the full pipeline at once.
 
+
 Full pipeline:
-
-
+```
 jupyter notebook Run_all_Process.ipynb
+```
 
-Step-by-step notebooks:
+## Step-by-step notebooks:
 
-IMAGE_PROCESSING.ipynb – Isolate red boundaries & numbers
+1. IMAGE_PROCESSING.ipynb – Isolate red boundaries & numbers
+2. PADDLE_OCR.ipynb – Detect and read reference numbers
+3. SAM_MODELS.ipynb – Segment plots into polygons
+4. COMBINE_DATA.ipynb – Link polygons with reference numbers
+5. GEOPANDAS.ipynb – Export results as GIS-ready data
 
-PADDLE_OCR.ipynb – Detect and read reference numbers
+🌍 Why This Matters
+Manual digitization of maps is time-consuming and error-prone. This project automates the process with AI, making it:
+Faster (minutes instead of hours)
+More accurate (OCR + AI segmentation)
+GIS-ready from the start
 
-SAM_MODELS.ipynb – Segment plots into polygons
+📬 Contact
+I can adapt this pipeline to your specific maps, formats, and accuracy requirements.
+📧 Email: olalekanoyeleye@yahoo.com
+🔗 LinkedIn: https://www.linkedin.com/in/olalekanoyeleye/
 
-COMBINE_DATA.ipynb – Link polygons with reference numbers
-
-GEOPANDAS.ipynb – Export results as GIS-ready data
-
-
+🙌 Acknowledgements
+Ultralytics
+Meta AI – Segment Anything
+PaddleOCR
+PyTorch
+GeoPandas
