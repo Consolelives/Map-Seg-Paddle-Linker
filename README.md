@@ -44,11 +44,14 @@ Data Linking – Match each detected polygon to its corresponding reference numb
 
 Export – Save as GeoPackage (.gpkg) or shapefile for GIS systems.
 
-## Visual Overview
+
+
+# Visual Overview
+
 Input Map	   
 <img width="2990" height="2770" alt="trim_class" src="https://github.com/user-attachments/assets/a7abbace-4d08-41d6-8cbe-039e0e8624b0" />
 
-## Skeletonized Image
+# Skeletonized Image
 
 <img width="2990" height="2770" alt="output_image_4" src="https://github.com/user-attachments/assets/4485a03c-c2ad-4393-bef0-8c5b81e34b40" />
 
@@ -61,12 +64,14 @@ Input Map
 
 <img width="136" height="89" alt="97_0554" src="https://github.com/user-attachments/assets/3165a478-2940-4e40-8716-1b341b58e060" />
 
-## Final GIS Output
+# Final GIS Output
+
+
 <img width="2131" height="1979" alt="Geopandas_map" src="https://github.com/user-attachments/assets/d50020a3-431d-419f-8ce6-4424f78728b7" />
 
 ---
 
-## 🔧 Requirements
+# 🔧 Requirements
 
 - Python 3.10  
 - Anaconda (recommended for environment management)  
